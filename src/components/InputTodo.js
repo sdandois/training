@@ -1,37 +1,40 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput } from 'react-native';
-
-import { Input } from './common';
-
-
-
-
+import { connect } from 'react-redux';
+import { changeInput, addTodo  } from '../actions';
 
 class InputTodo extends Component {
-    render(){
-        return (
-            <View style={styles.view} >
-                <TextInput placeholder={PLACE_HOLDER} style={styles.input} />
-            </View>
-        );
-    }
-    
+  render(){
+    return (
+      <View style = { styles.view } >
+        <TextInput
+          style = { styles.input }
+          placeholder = { PLACE_HOLDER }
+          onSubmitEditing = { this.props.addTodo }
+          onChangeText = { this.props.changeInput }
+          value = { this.props.inputText }
+        />
+      </View>
+    );
+  }
+
 }
 
 const styles = {
-    view:{
-        backgroundColor: '#EEE'
-    },
-    input: {
-        color: '#000',
-        paddingRight: 5,
-        paddingLeft: 5,
-        margin:5,
-        fontSize: 18,
-        lineHeight: 23
-    }
+  view:{
+    backgroundColor: '#EEE'
+  },
+  input: {
+    color: '#000',
+    margin:5,
+    fontSize: 20,
+  }
 };
 
 const PLACE_HOLDER = 'Enter a item...';
 
-export default InputTodo;
+const mapStateToProps = state => {
+  return { inputText:state.inputText };
+};
+
+export default connect( mapStateToProps, { changeInput, addTodo } )( InputTodo );

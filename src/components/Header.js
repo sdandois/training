@@ -1,16 +1,13 @@
-
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-
-
-const Header = (props) => {
+const Header = () => {
     return (
         <View style={styles.view}>
             <Text style={styles.fontSize}>{HEADER_TEXT}</Text>
         </View>
     );
-}
+};
 
 const styles = {
     view:{
@@ -27,6 +24,6 @@ const styles = {
     }
 }
 
-const HEADER_TEXT = "Todo List";
+const HEADER_TEXT = 'Todo List';
 
 export default Header;

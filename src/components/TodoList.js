@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { connect } from 'react-redux'; 
 
 import TodoItem from './TodoItem';
 
 class TodoList extends Component {
+  renderItem({item}) {
+    return ( <TodoItem todo = { item } /> );
+  }
+
+  keyExtractor(item) {
+    return item.id.toString();
+  }
+
   render () {
     return (
-      <View style={styles.view}>
+      <View style = { styles.view } >
         <FlatList 
-          data = {dummyData}
-          renderItem = { ({item}) => <TodoItem todo={item} />}
-          keyExtractor = { (item) => item.id.toString()}
-        
+          data = { this.props.todos }
+          renderItem = { this.renderItem }
+          keyExtractor = { this.keyExtractor }
         />
       </View>
     );
@@ -24,9 +32,10 @@ const styles = {
   }
 };
 
-const dummyData = [
-  {text:'Lavar los platos', done:false, id:1},
-  {text:'Hacer la tarea', done:true, id:2}
-];
+const mapStateToProps = state => {
+  return {
+    todos:state.todos
+  };
+};
 
-export default TodoList;
+export default connect( mapStateToProps )( TodoList );
