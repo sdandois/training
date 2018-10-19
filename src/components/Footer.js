@@ -31,8 +31,4 @@ const styles = {
 
 const BUTTON_DELETE_TEXT = 'Remove Completed';
 
-const mapStateToProps = () => {
-  return {};
-};
-
-export default connect(mapStateToProps, { removeCompleted })( Footer );
+export default connect(null , {removeCompleted})( Footer );

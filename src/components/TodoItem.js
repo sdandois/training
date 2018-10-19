@@ -61,8 +61,4 @@ const styles = {
   }
 };
 
-const mapStateToProps = () => {
-  return {};
-};
-
-export default connect(mapStateToProps, { toggleDone, removeTodo })( TodoItem );
+export default connect(null, { toggleDone, removeTodo })( TodoItem );
