@@ -2,33 +2,45 @@ import React, { Component } from 'react';
 import { Platform, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { createMaterialTopTabNavigator } from 'react-navigation';
 
-import Footer from './components/Footer';
-import Header from './components/Header';
-import InputTodo from './components/InputTodo';
-import TodoList from './components/TodoList';
+
+import TodoScreen from './TodoScreen';
+import DummyScreen from './DummyScreen';
 import reducers from './reducers';
 
-export default class App extends Component { 
+import * as screenNames from './constants/screenNames';
+
+const RootStack = createMaterialTopTabNavigator(
+  {
+    [screenNames.Todos]:TodoScreen,
+    [screenNames.Dummy]:DummyScreen
+  },
+  { 
+    initialRouteName: screenNames.Todos,
+    tabBarOptions: {
+      style: {
+        paddingTop: 40,
+        backgroundColor: 'blue'
+      },
+      labelStyle: {
+        fontWeight: '900'
+      }
+    }
+  }
+) ;
+
+class App extends Component { 
   render() {
     return (
       <Provider store={createStore(reducers)} >
-      <View style={styles.container}>
-        <Header />
-        <InputTodo />
-        <TodoList />
-        <Footer />
-      </View>
+        <RootStack />
       </Provider>
     );
   }
 }
+ 
 
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    backgroundColor: '#F5FCFF',
-  }
-};
+
+
+export default App;
