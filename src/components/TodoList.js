@@ -34,7 +34,7 @@ const styles = {
 
 const mapStateToProps = state => {
   return {
-    todos:state.todos
+    todos:state.todosStore.todos
   };
 };
 

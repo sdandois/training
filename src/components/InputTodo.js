@@ -34,7 +34,7 @@ const styles = {
 const PLACE_HOLDER = 'Enter a item...';
 
 const mapStateToProps = state => {
-  return { inputText:state.inputText };
+  return { inputText:state.todosStore.inputText };
 };
 
 export default connect( mapStateToProps, { changeInput, addTodo } )( InputTodo );
