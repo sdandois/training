@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
+import BookList from './components/BookList';
+
 class DummyScreen extends Component {
   static navigationOptions = {
     title: 'Dummy'
@@ -9,7 +11,7 @@ class DummyScreen extends Component {
   render() {
     return (
       <View style={styles.view}>
-        <Text> Otra Screen </Text>
+        <BookList />
       </View>
     );
   };
