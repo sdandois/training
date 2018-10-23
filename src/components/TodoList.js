@@ -22,10 +22,9 @@ class TodoList extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    todos:state.todos
-  };
-};
+const mapStateToProps = state => ({
+  todos:state.todos
+});
 
 export default connect( mapStateToProps )( TodoList );
+

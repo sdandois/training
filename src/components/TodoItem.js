@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Button } from './common/Button';
 import { toggleDone, removeTodo } from '../actions';
 import styles from './styles/todoItem.js';
-
+import * as actionCreators from '../actions';
 
 class TodoItem extends Component {
   toggleDone () {
@@ -51,4 +51,14 @@ class TodoItem extends Component {
   }
 }
 
-export default connect(null, { toggleDone, removeTodo })( TodoItem );
+const mapDispatchToProps = (dispatch) => ({
+  toggleDone: (id) => {
+    dispatch(actionCreators.toggleDone(id));
+  },
+  removeTodo: (id) => {
+    dispatch(actionCreators.removeTodo(id));
+  }
+});
+
+export default connect(null, mapDispatchToProps)( TodoItem );
+
