@@ -26,6 +26,7 @@ export default (state = INITIAL_STATE, action) => {
   switch(action.type) {
   case INPUT_CHANGE:
     return { ...state, inputText:action.text };
+
   case ADD_TODO: 
     return { 
       ...state,

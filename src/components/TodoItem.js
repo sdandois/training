@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { Button } from './common/Button';
 import { toggleDone, removeTodo } from '../actions';
+import styles from './styles/todoItem.js';
+
 
 class TodoItem extends Component {
   toggleDone () {
@@ -15,7 +17,7 @@ class TodoItem extends Component {
   }
 
   color () {
-    if (this.props.todo.done) {
+    if ( this.props.todo.done ) {
       return {
         backgroundColor: '#BBB'
       };
@@ -48,17 +50,5 @@ class TodoItem extends Component {
     );
   }
 }
-
-const styles = {
-  viewContainer: {
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    padding:5
-  },
-  viewChecks: {
-    flexDirection:'row'
-  }
-};
 
 export default connect(null, { toggleDone, removeTodo })( TodoItem );

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import { removeCompleted } from '../actions';
 import styles from './styles/footer.js';
+import { BUTTON_DELETE_TEXT } from './constants.js';
 
 
 class Footer extends Component {
@@ -19,6 +20,5 @@ class Footer extends Component {
   }
 }
 
-const BUTTON_DELETE_TEXT = 'Remove Completed';
 
 export default connect(null , {removeCompleted})( Footer );
