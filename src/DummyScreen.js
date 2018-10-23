@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
+import styles from './styles/dummy.js'
+
 class DummyScreen extends Component {
   static navigationOptions = {
     title: 'Dummy'
@@ -12,16 +14,7 @@ class DummyScreen extends Component {
         <Text> Otra Screen </Text>
       </View>
     );
-  };
-
-}
-
-const styles = {
-  view: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
   }
-};
+}
 
 export default DummyScreen;

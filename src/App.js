@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Platform, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 
-
 import TodoScreen from './TodoScreen';
 import DummyScreen from './DummyScreen';
 import reducers from './reducers';
-
 import * as screenNames from './constants/screenNames';
 
 const TabNavigator = createMaterialTopTabNavigator(
@@ -44,7 +42,7 @@ const RootStack = createStackNavigator(
   }
 );
 
-class App extends Component { 
+class App extends PureComponent { 
   render() {
     return (
       <Provider store={createStore(reducers)} >
@@ -53,8 +51,6 @@ class App extends Component {
     );
   }
 }
- 
-
-
 
 export default App;
+

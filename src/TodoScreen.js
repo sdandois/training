@@ -8,6 +8,8 @@ import Header from './components/Header';
 import InputTodo from './components/InputTodo';
 import TodoList from './components/TodoList';
 
+import styles from './styles/base'; 
+
 
 class TodoScreen extends Component { 
   static navigationOptions = {
@@ -24,17 +26,5 @@ class TodoScreen extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    backgroundColor: '#F5FCFF',
-    
-  }
-};
-
-const TODO_SCREEN_TITLE = 'ToDo\'s List';
 
 export default TodoScreen;
