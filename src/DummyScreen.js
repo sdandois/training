@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 import BookList from './components/BookList';
+import styles from './styles/dummy.js'
 
 class DummyScreen extends Component {
   static navigationOptions = {
@@ -14,16 +15,7 @@ class DummyScreen extends Component {
         <BookList />
       </View>
     );
-  };
-
-}
-
-const styles = {
-  view: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
   }
-};
+}
 
 export default DummyScreen;

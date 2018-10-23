@@ -3,19 +3,15 @@ import { View, Text, Switch } from 'react-native';
 import { connect } from 'react-redux';
 
 import { Button } from './common/Button';
-import { toggleDone, removeTodo } from '../actions';
+import styles from './styles/todoItem.js';
+import * as actionCreators from '../actions';
 
 class TodoItem extends Component {
-  toggleDone () {
-    this.props.toggleDone(this.props.todo.id);
-  }
-
-  removeTodo () {
-    this.props.removeTodo(this.props.todo.id);
-  }
+  toggleDone  = () => this.props.toggleDone(this.props.todo.id);
+  removeTodo  = () => this.props.removeTodo(this.props.todo.id);
 
   color () {
-    if (this.props.todo.done) {
+    if ( this.props.todo.done ) {
       return {
         backgroundColor: '#BBB'
       };
@@ -28,18 +24,18 @@ class TodoItem extends Component {
 
   render () {
     return (
-      <View style = {[ styles.viewContainer, this.color() ]}>
+      <View style={[styles.viewContainer, this.color()]}>
         <Text>
           { this.props.todo.text }
         </Text>
-        <View style = { styles.viewChecks } >
+        <View style={styles.viewChecks} >
           <Switch
-            value = { this.props.todo.done }
-            onValueChange = { this.toggleDone.bind(this) }
+            value={this.props.todo.done}
+            onValueChange={this.toggleDone.bind(this)}
           />
           <Button
-            color = 'tomato'
-            onPress = { this.removeTodo.bind(this) }
+            color='tomato'
+            onPress={this.removeTodo.bind(this)}
           >
             X
           </Button>
@@ -49,16 +45,14 @@ class TodoItem extends Component {
   }
 }
 
-const styles = {
-  viewContainer: {
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    padding:5
+const mapDispatchToProps = (dispatch) => ({
+  toggleDone: (id) => {
+    dispatch(actionCreators.toggleDone(id));
   },
-  viewChecks: {
-    flexDirection:'row'
+  removeTodo: (id) => {
+    dispatch(actionCreators.removeTodo(id));
   }
-};
+});
 
-export default connect(null, { toggleDone, removeTodo })( TodoItem );
+export default connect(null, mapDispatchToProps)( TodoItem );
+

@@ -3,7 +3,9 @@ import { View, Text } from 'react-native';
 import { Button } from './common/Button';
 import { connect } from 'react-redux'; 
 
-import { removeCompleted } from '../actions';
+import * as actionCreators from '../actions';
+import styles from './styles/footer.js';
+import { BUTTON_DELETE_TEXT } from './constants.js';
 
 
 class Footer extends Component {
@@ -18,17 +20,10 @@ class Footer extends Component {
   }
 }
 
-const styles = {
-  view:{
-    height:80,
-    position:'relative',
-    padding:10,
-    justifyContent:'center',
-    alignItems: 'center',
-    backgroundColor: '#EEE'
+const mapDispatchToProps = (dispatch) => ({
+  removeCompleted : () => {
+    dispatch(actionCreators.removeCompleted());
   }
-};
+});
 
-const BUTTON_DELETE_TEXT = 'Remove Completed';
-
-export default connect(null , {removeCompleted})( Footer );
+export default connect(null , mapDispatchToProps )( Footer );
