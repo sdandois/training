@@ -9,13 +9,13 @@ import styles from './styles/inputTodo';
 class InputTodo extends Component {
   render(){
     return (
-      <View style = { styles.view } >
+      <View style={styles.view} >
         <TextInput
-          style = { styles.input }
-          placeholder = { PLACE_HOLDER }
-          onSubmitEditing = { this.props.addTodo }
-          onChangeText = { this.props.changeInput }
-          value = { this.props.inputText }
+          style={styles.input}
+          placeholder={PLACE_HOLDER}
+          onSubmitEditing={this.props.addTodo}
+          onChangeText={this.props.changeInput}
+          value={this.props.inputText}
         />
       </View>
     );
