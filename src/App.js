@@ -9,6 +9,8 @@ import InputTodo from './components/InputTodo';
 import TodoList from './components/TodoList';
 import reducers from './reducers';
 
+import styles from './components/styles/base.js';
+
 export default class App extends Component { 
   render() {
     return (
@@ -24,11 +26,3 @@ export default class App extends Component {
   }
 }
 
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'stretch',
-    backgroundColor: '#F5FCFF',
-  }
-};

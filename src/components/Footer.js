@@ -4,6 +4,7 @@ import { Button } from './common/Button';
 import { connect } from 'react-redux'; 
 
 import { removeCompleted } from '../actions';
+import styles from './styles/footer.js';
 
 
 class Footer extends Component {
@@ -17,17 +18,6 @@ class Footer extends Component {
     );
   }
 }
-
-const styles = {
-  view:{
-    height:80,
-    position:'relative',
-    padding:10,
-    justifyContent:'center',
-    alignItems: 'center',
-    backgroundColor: '#EEE'
-  }
-};
 
 const BUTTON_DELETE_TEXT = 'Remove Completed';
 
