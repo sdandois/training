@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
-import styles from './styles/dummy.js'
+import styles from './styles/dummy';
 
 class DummyScreen extends Component {
   static navigationOptions = {
@@ -18,3 +18,4 @@ class DummyScreen extends Component {
 }
 
 export default DummyScreen;
+

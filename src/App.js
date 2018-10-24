@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import RootStack from './Navigation';
 
-class App extends PureComponent { 
+class App extends PureComponent {
   render() {
     return (
       <Provider store={createStore(reducers)} >
