@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux'; 
+import axios from 'axios';
 
 import BookItem from './BookItem';
-
-import axios from 'axios';
+import * as actionCreators from '../actions';
 
 class BookList extends Component {
 
@@ -15,15 +15,7 @@ class BookList extends Component {
     };
   }
   componentWillMount() {
-    axios.get('https://private-af3ad-train5.apiary-mock.com/books0').then(
-      response => {
-        this.setState(
-          {
-            books:response.data
-          }
-        );
-      }
-    );
+    this.props.requestBooks();
   }
   renderItem( {item} ) {
     console.log(item);
@@ -39,9 +31,9 @@ class BookList extends Component {
     return (
       <View style = { styles.view } >
         <FlatList 
-          data = { this.state.books }
-          renderItem = { this.renderItem }
-          keyExtractor = { this.keyExtractor }
+          data={this.state.books}
+          renderItem={this.renderItem}
+          keyExtractor={this.keyExtractor}
         />
       </View>
     );
@@ -55,24 +47,26 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-  const hardCoredLib = [
-    {
-      title:"La Conjura de los Necios",   
-      author:"Richard Kevinston",
-      id:0
-    },
-    {
-      title:"El Quijote",
-      author:"Miguel de Cervantes",
-      id:1
-    }
-
-  ];
-
-  return {
-    books:hardCoredLib
-  };
-
 };
 
-export default connect( mapStateToProps )( BookList );
+const dispatchToProps = dispatch => ({
+  requestBooks : () => {
+    console.log(actionCreators);
+    dispatch(actionCreators.requestBooksStart());
+    axios.get('https://private-af3ad-train5.apiary-mock.com/books0')
+      .then(
+        (response) => {
+          dispatch(actionCreators.requestBooksOk(response.data));
+        }
+      )
+      .catch(
+        response => {
+          dispatch(actionCreators.requestBooksFail());
+        }
+      );
+  }
+
+});
+
+export default connect( null, dispatchToProps )( BookList );
+

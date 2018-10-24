@@ -4,28 +4,16 @@ import { connect } from 'react-redux';
 
 import { Button } from './common/Button';
 import { toggleDone, removeTodo } from '../actions';
-
+import styles from './styles/bookItem.js';
 
 
 const BookItem = ( {book}) => {
   return (
     <View style={styles.viewContainer}>
-     <Text> {book.title} </Text>
+      <Text> {book.title} </Text>
     </View>
   );
 };
 
-
-const styles = {
-  viewContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 5
-  },
-  viewChecks: {
-    flexDirection: 'row'
-  }
-};
-
 export default BookItem;
+
