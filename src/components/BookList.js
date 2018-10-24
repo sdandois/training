@@ -7,31 +7,17 @@ import BookItem from './BookItem';
 import * as actionCreators from '../actions';
 
 class BookList extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      books:[]
-    };
-  }
   componentWillMount() {
     this.props.requestBooks();
   }
-  renderItem( {item} ) {
-    console.log(item);
-    return ( <BookItem book = { item } /> );
-  }
-
-  keyExtractor(item) {
-    return item.id.toString();
-  }
+  renderItem = ({ item }) => <BookItem book={item} />;
+  keyExtractor = ( item ) => item.id.toString();
 
   render () {
-    console.log(this.state.books);
     return (
       <View style = { styles.view } >
         <FlatList 
-          data={this.state.books}
+          data={this.props.books}
           renderItem={this.renderItem}
           keyExtractor={this.keyExtractor}
         />
@@ -46,12 +32,19 @@ const styles = {
   }
 };
 
-const mapStateToProps = state => {
-};
+const mapStateToProps = state => ({
+  books:state.booksStore.data.map(
+    (book) => {
+      if (!book.thumbnail) {
+        return {...book, thumbnail:require('./img/descarga.jpeg') };
+      }
+      return {...book, thumbnail:{uri:book.thumbnail}};
+    } ),
+  status:state.booksStore.status
+});
 
 const dispatchToProps = dispatch => ({
   requestBooks : () => {
-    console.log(actionCreators);
     dispatch(actionCreators.requestBooksStart());
     axios.get('https://private-af3ad-train5.apiary-mock.com/books0')
       .then(
@@ -68,5 +61,5 @@ const dispatchToProps = dispatch => ({
 
 });
 
-export default connect( null, dispatchToProps )( BookList );
+export default connect( mapStateToProps, dispatchToProps )( BookList );
 

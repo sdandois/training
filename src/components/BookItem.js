@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Switch } from 'react-native';
+import { View, Text, Switch , Image} from 'react-native';
 import { connect } from 'react-redux';
 
 import { Button } from './common/Button';
@@ -10,7 +10,14 @@ import styles from './styles/bookItem.js';
 const BookItem = ( {book}) => {
   return (
     <View style={styles.viewContainer}>
-      <Text> {book.title} </Text>
+      <Image
+        style={styles.thumbnail}
+        source={book.thumbnail}
+      />
+      <View style={styles.viewLabels}>
+        <Text style={styles.authorLabel}>{book.title}</Text>
+        <Text>{book.author}</Text>
+      </View>
     </View>
   );
 };

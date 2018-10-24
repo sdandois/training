@@ -2,12 +2,12 @@ import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navig
 import * as screenNames from './constants/screenNames';
 
 import TodoScreen from './TodoScreen';
-import DummyScreen from './DummyScreen';
+import BooksScreen from './BooksScreen';
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
     [screenNames.Todos]:TodoScreen,
-    [screenNames.Dummy]:DummyScreen
+    [screenNames.Books]:BooksScreen
   },
   { 
     initialRouteName: screenNames.Todos,

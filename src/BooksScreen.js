@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 import BookList from './components/BookList';
-import styles from './styles/dummy.js'
+import styles from './styles/booksScreen.js'
 
-class DummyScreen extends Component {
+class BooksScreen extends Component {
   static navigationOptions = {
-    title: 'Dummy'
+    title: 'Books'
   };
 
   render() {
@@ -18,4 +18,4 @@ class DummyScreen extends Component {
   }
 }
 
-export default DummyScreen;
+export default BooksScreen;
