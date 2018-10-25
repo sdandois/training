@@ -4,6 +4,7 @@ import * as screenNames from './constants/screenNames';
 import TodoScreen from './TodoScreen';
 import BooksScreen from './BooksScreen';
 import BookDetailScreen from './BookDetailScreen';
+import styles from './styles/navigation';
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
@@ -13,12 +14,8 @@ const TabNavigator = createMaterialTopTabNavigator(
   {
     initialRouteName: screenNames.Todos,
     tabBarOptions: {
-      style: {
-        backgroundColor: 'blue'
-      },
-      labelStyle: {
-        fontWeight: '900'
-      }
+      style: styles.tabBar,
+      labelStyle: styles.tabLabel
     }
   }
 );
@@ -32,9 +29,7 @@ const RootStack = createStackNavigator(
     initialRouteName: screenNames.Home,
     navigationOptions: {
       title: 'App',
-      headerStyle: {
-        backgroundColor: 'light-grey'
-      }
+      headerStyle: styles.header
     }
   }
 );
