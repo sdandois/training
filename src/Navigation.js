@@ -1,15 +1,15 @@
 import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
-import * as screenNames from './constants/screenNames';
 
+import * as screenNames from './constants/screenNames';
 import TodoScreen from './TodoScreen';
 import BooksScreen from './BooksScreen';
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
-    [screenNames.Todos]:TodoScreen,
-    [screenNames.Books]:BooksScreen
+    [screenNames.Todos]: TodoScreen,
+    [screenNames.Books]: BooksScreen
   },
-  { 
+  {
     initialRouteName: screenNames.Todos,
     tabBarOptions: {
       style: {
@@ -20,19 +20,18 @@ const TabNavigator = createMaterialTopTabNavigator(
       }
     }
   }
-) ;
+);
 
 const RootStack = createStackNavigator(
   {
-
-    [screenNames.Home]:TabNavigator
+    [screenNames.Home]: TabNavigator
   },
   {
-    initialRouteName:screenNames.Home,
-    navigationOptions:{  
+    initialRouteName: screenNames.Home,
+    navigationOptions: {
       title: 'App',
-      headerStyle:{
-        backgroundColor:'light-grey'
+      headerStyle: {
+        backgroundColor: 'light-grey'
       }
     }
   }

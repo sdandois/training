@@ -6,35 +6,25 @@ import {
   REMOVE_COMPLETED
 } from './types';
 
-export const changeInput = (text) => {
-  return {
-    type:INPUT_CHANGE,
-    text
-  };
-};
+export const changeInput = text => ({
+  type: INPUT_CHANGE,
+  text
+});
 
-export const addTodo = () => {
-  return {
-    type:ADD_TODO
-  };
-};
+export const addTodo = () => ({
+  type: ADD_TODO
+});
 
-export const toggleDone = (id) => {
-  return {
-    type: TOGGLE_DONE,
-    id
-  };
-};
+export const toggleDone = id => ({
+  type: TOGGLE_DONE,
+  id
+});
 
-export const removeTodo = (id) => {
-  return {
-    type: REMOVE_TODO,
-    id
-  };
-};
+export const removeTodo = id => ({
+  type: REMOVE_TODO,
+  id
+});
 
-export const removeCompleted = () => {
-  return {
-    type:REMOVE_COMPLETED
-  };
-};
+export const removeCompleted = () => ({
+  type: REMOVE_COMPLETED
+});

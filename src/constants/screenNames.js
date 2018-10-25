@@ -1,3 +1,3 @@
 export const Todos = 'TodosScreenName';
-export const Book = 'BooksScreenName';
+export const Books = 'BooksScreenName';
 export const Home = 'HomeScreen';

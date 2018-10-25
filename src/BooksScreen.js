@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 import BookList from './components/BookList';
-import styles from './styles/booksScreen.js'
+import styles from './styles/booksScreen';
 
 class BooksScreen extends Component {
   static navigationOptions = {
