@@ -6,7 +6,7 @@ import {
 import { STATUS_READY, STATUS_WAIT, STATUS_OK, STATUS_ERROR } from './constants';
 
 const INITIAL_STATE = {
-  status: STATUS_READY,
+  status: STATUS_WAIT,
   data: []
 };
 
