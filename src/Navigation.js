@@ -3,6 +3,7 @@ import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navig
 import * as screenNames from './constants/screenNames';
 import TodoScreen from './TodoScreen';
 import BooksScreen from './BooksScreen';
+import BookDetailScreen from './BookDetailScreen';
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
@@ -24,7 +25,8 @@ const TabNavigator = createMaterialTopTabNavigator(
 
 const RootStack = createStackNavigator(
   {
-    [screenNames.Home]: TabNavigator
+    [screenNames.Home]: TabNavigator,
+    [screenNames.BookDetail]: BookDetailScreen
   },
   {
     initialRouteName: screenNames.Home,
