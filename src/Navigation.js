@@ -3,6 +3,7 @@ import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navig
 import * as screenNames from './constants/screenNames';
 import TodoScreen from './TodoScreen';
 import BooksScreen from './BooksScreen';
+import styles from './styles/navigation';
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
@@ -12,12 +13,8 @@ const TabNavigator = createMaterialTopTabNavigator(
   {
     initialRouteName: screenNames.Todos,
     tabBarOptions: {
-      style: {
-        backgroundColor: 'blue'
-      },
-      labelStyle: {
-        fontWeight: '900'
-      }
+      style: styles.tabBar,
+      labelStyle:styles.tabLabel
     }
   }
 );
@@ -27,14 +24,13 @@ const RootStack = createStackNavigator(
     [screenNames.Home]: TabNavigator
   },
   {
-    initialRouteName: screenNames.Home,
-    navigationOptions: {
+    initialRouteName:screenNames.Home,
+    navigationOptions:{
       title: 'App',
-      headerStyle: {
-        backgroundColor: 'light-grey'
-      }
+      headerStyle:styles.header
     }
   }
 );
 
 export default RootStack;
+
