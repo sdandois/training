@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { View, FlatList } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
 import * as actionCreators from '../actions';
+import * as statusCodes from '../reducers/constants';
 
 import styles from './styles/bookList';
 import BookItem from './BookItem';
+import { Spinner } from './common';
 
 class BookList extends Component {
   componentWillMount() {
@@ -16,12 +18,38 @@ class BookList extends Component {
   keyExtractor = item => item.id.toString();
   renderItem = ({ item }) => <BookItem book={item} />;
 
-  render() {
+  renderList() {
     return (
       <View style={styles.view}>
         <FlatList data={this.props.books} renderItem={this.renderItem} keyExtractor={this.keyExtractor} />
       </View>
     );
+  }
+
+  renderSpinner() {
+    return (
+      <View style={styles.centered}>
+        <Spinner />
+      </View>
+    );
+  }
+
+  renderError() {
+    return (
+      <View style={styles.centered}>
+        <Text>Connection Error </Text>
+      </View>
+    );
+  }
+
+  render() {
+    if (this.props.status === statusCodes.STATUS_WAIT) {
+      return this.renderSpinner();
+    }
+    if (this.props.status === statusCodes.STATUS_OK) {
+      return this.renderList();
+    }
+    return this.renderError();
   }
 }
 
