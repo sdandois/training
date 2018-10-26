@@ -3,7 +3,7 @@ import {
   REQUEST_BOOKS_OK,
 } from '../actions/types';
 
-import { STATUS_READY, STATUS_WAIT, STATUS_OK, STATUS_ERROR } from './constants';
+import { STATUS_WAIT, STATUS_OK, STATUS_ERROR } from './constants';
 
 const INITIAL_STATE = {
   status: STATUS_WAIT,

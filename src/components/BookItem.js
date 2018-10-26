@@ -15,7 +15,7 @@ class BookItem extends Component {
 
   render() {
     return (
-      <TouchableOpacity style={styles.viewContainer} onPress={this.navigate.bind(this)}>
+      <TouchableOpacity style={styles.viewContainer} onPress={this.navigate}>
         <Image style={styles.thumbnail} source={this.props.book.thumbnail} />
         <View style={styles.viewLabels}>
           <Text style={styles.authorLabel}>{this.props.book.title}</Text>

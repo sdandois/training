@@ -28,8 +28,8 @@ class TodoItem extends Component {
       <View style={[styles.viewContainer, this.color()]}>
         <Text>{this.props.todo.text}</Text>
         <View style={styles.viewChecks}>
-          <Switch value={this.props.todo.done} onValueChange={this.toggleDone.bind(this)} />
-          <Button color="tomato" onPress={this.removeTodo.bind(this)}>
+          <Switch value={this.props.todo.done} onValueChange={this.toggleDone} />
+          <Button color="tomato" onPress={this.removeTodo}>
             X
           </Button>
         </View>
