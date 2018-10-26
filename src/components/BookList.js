@@ -18,38 +18,26 @@ class BookList extends Component {
   keyExtractor = item => item.id.toString();
   renderItem = ({ item }) => <BookItem book={item} />;
 
-  renderList() {
-    return (
-      <View style={styles.view}>
-        <FlatList data={this.props.books} renderItem={this.renderItem} keyExtractor={this.keyExtractor} />
-      </View>
-    );
-  }
+  List = () => (
+    <View style={styles.view}>
+      <FlatList data={this.props.books} renderItem={this.renderItem} keyExtractor={this.keyExtractor} />
+    </View>
+  );
 
-  renderSpinner() {
-    return (
-      <View style={styles.centered}>
-        <Spinner />
-      </View>
-    );
-  }
-
-  renderError() {
-    return (
-      <View style={styles.centered}>
-        <Text>Connection Error </Text>
-      </View>
-    );
-  }
+  ErrorComponent = () => (
+    <View style={styles.centered}>
+      <Text>Connection Error </Text>
+    </View>
+  );
 
   render() {
     if (this.props.status === statusCodes.STATUS_WAIT) {
-      return this.renderSpinner();
+      return <Spinner />;
     }
     if (this.props.status === statusCodes.STATUS_OK) {
-      return this.renderList();
+      return <this.List />;
     }
-    return this.renderError();
+    return <this.ErrorComponent />;
   }
 }
 
@@ -73,7 +61,6 @@ const dispatchToProps = dispatch => ({
       })
       .catch(() => {
         dispatch(actionCreators.requestBooksFail());
-        console.log('Error Loading Books');
       });
   }
 });
