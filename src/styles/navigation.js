@@ -1,9 +1,8 @@
-import { StyleSheet } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default ScaledSheet.create({
   tabBar: {
-    backgroundColor: 'blue',
+    backgroundColor: 'blue'
   },
   tabLabel: {
     fontWeight: '900',

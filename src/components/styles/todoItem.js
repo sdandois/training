@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
 export default ScaledSheet.create({
@@ -12,6 +11,6 @@ export default ScaledSheet.create({
     flexDirection: 'row'
   },
   todoLabel: {
-  fontSize: '15@ms'
+    fontSize: '15@ms'
   }
 });

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 import styles from './styles/bookDetailScreen';
-import itemStyles from './components/styles/bookItem';
 
 class BookDetailScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
