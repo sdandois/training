@@ -1,12 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
-export default StyleSheet.create({
+export default ScaledSheet.create({
   view: {
-    height: 80,
+    height: '50@ms',
     position: 'relative',
-    padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#EEE'
+    backgroundColor: '#EEE',
+    padding: '8@ms'
+  },
+  button: {
+    width: '200@s'
   }
 });

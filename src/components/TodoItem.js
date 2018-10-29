@@ -26,7 +26,7 @@ class TodoItem extends Component {
   render() {
     return (
       <View style={[styles.viewContainer, this.color()]}>
-        <Text>{this.props.todo.text}</Text>
+        <Text style={styles.todoLabel}>{this.props.todo.text}</Text>
         <View style={styles.viewChecks}>
           <Switch value={this.props.todo.done} onValueChange={this.toggleDone} />
           <Button color="tomato" onPress={this.removeTodo}>

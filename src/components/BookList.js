@@ -26,7 +26,7 @@ class BookList extends Component {
 
   ErrorComponent = () => (
     <View style={styles.centered}>
-      <Text>Connection Error </Text>
+      <Text style={styles.label}>Connection Error </Text>
     </View>
   );
 

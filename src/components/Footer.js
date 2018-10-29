@@ -10,7 +10,9 @@ import { BUTTON_DELETE_TEXT } from './constants';
 
 const Footer = props => (
   <View style={styles.view}>
-    <Button onPress={props.removeCompleted}>{BUTTON_DELETE_TEXT}</Button>
+    <Button style={styles.button} onPress={props.removeCompleted}>
+      {BUTTON_DELETE_TEXT}
+    </Button>
   </View>
 );
 

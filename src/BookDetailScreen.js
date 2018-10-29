@@ -15,8 +15,8 @@ class BookDetailScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.card}>
-          <Text style={itemStyles.authorLabel}>Author:</Text>
-          <Text style={styles.label}>{book.author}</Text>
+          <Text style={styles.label}>Author:</Text>
+          <Text style={styles.content}>{book.author}</Text>
         </View>
       </View>
     );

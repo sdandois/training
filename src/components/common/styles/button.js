@@ -1,19 +1,18 @@
-import { StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
-export default StyleSheet.create({
+export default ScaledSheet.create({
   textStyle: {
     alignSelf: 'center',
-    fontSize: 16,
+    fontSize: '15@ms',
     fontWeight: '600',
-    padding: 10
+    padding: '5@ms'
   },
   buttonStyle: {
-    alignSelf: 'stretch',
     justifyContent: 'center',
     backgroundColor: '#fff',
-    borderRadius: 5,
-    borderWidth: 1,
-    marginLeft: 5,
-    marginRight: 5
+    borderRadius: '5@ms',
+    marginLeft: '4@ms',
+    marginRight: '4@ms',
+    borderWidth: 1
   }
 });

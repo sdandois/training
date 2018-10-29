@@ -1,13 +1,17 @@
 import { StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
-export default StyleSheet.create({
+export default ScaledSheet.create({
   viewContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 5
+    padding: '3@s'
   },
   viewChecks: {
     flexDirection: 'row'
+  },
+  todoLabel: {
+  fontSize: '15@ms'
   }
 });

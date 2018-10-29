@@ -1,21 +1,26 @@
 import { StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
-export default StyleSheet.create({
+export default ScaledSheet.create({
   viewContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 5
   },
   viewLabels: {
-    paddingLeft: 20
+    paddingLeft: '20@ms'
+  },
+  titleLabel: {
+    fontWeight: '900',
+    fontSize: '14@ms'
   },
   authorLabel: {
-    fontWeight: '900'
+    fontSize: '12@ms'
   },
   thumbnail: {
-    margin: 3,
-    width: 30,
-    height: 30,
-    borderRadius: 20
+    margin: '5@ms',
+    width: '30@ms',
+    height: '30@vs',
+    borderRadius: '20@s'
   }
 });

@@ -1,15 +1,22 @@
-import { StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
-export default StyleSheet.create({
+export default ScaledSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },
   card: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
   },
   label: {
-    marginLeft: 10
+    fontSize: '15@ms',
+    fontWeight: '900'
+  },
+  content: {
+    fontSize: '15@ms',
+    marginLeft: '10@ms'
   }
 });

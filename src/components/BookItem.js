@@ -18,8 +18,8 @@ class BookItem extends Component {
       <TouchableOpacity style={styles.viewContainer} onPress={this.navigate}>
         <Image style={styles.thumbnail} source={this.props.book.thumbnail} />
         <View style={styles.viewLabels}>
-          <Text style={styles.authorLabel}>{this.props.book.title}</Text>
-          <Text>{this.props.book.author}</Text>
+          <Text style={styles.titleLabel}>{this.props.book.title}</Text>
+          <Text style={styles.authorLabel}>{this.props.book.author}</Text>
         </View>
       </TouchableOpacity>
     );

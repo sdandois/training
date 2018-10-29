@@ -1,12 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
-export default StyleSheet.create({
+export default ScaledSheet.create({
   view: {
-    backgroundColor: '#EEE'
+    backgroundColor: '#EEE',
+    padding: '5@ms'
   },
   input: {
     color: '#000',
-    margin: 5,
-    fontSize: 20
+    fontSize: '16@ms'
   }
 });
