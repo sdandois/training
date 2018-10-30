@@ -11,7 +11,7 @@ import BookItem from './BookItem';
 import { Spinner } from './common';
 
 class BookList extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.requestBooks();
   }
 
@@ -53,14 +53,14 @@ const mapStateToProps = state => ({
 
 const dispatchToProps = dispatch => ({
   requestBooks: () => {
-    dispatch(actionCreators.requestBooksStart());
+    dispatch(actionCreators.requestBooks());
     axios
       .get('https://private-af3ad-train5.apiary-mock.com/books0')
       .then(response => {
-        dispatch(actionCreators.requestBooksOk(response.data));
+        dispatch(actionCreators.requestBooksSuccess(response.data));
       })
       .catch(() => {
-        dispatch(actionCreators.requestBooksFail());
+        dispatch(actionCreators.requestBooksFailure());
       });
   }
 });
