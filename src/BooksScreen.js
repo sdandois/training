@@ -3,11 +3,10 @@ import { View } from 'react-native';
 
 import BookList from './components/BookList';
 import styles from './styles/booksScreen';
+import { booksNavOptions } from './constants/navigationOptions';
 
 class BooksScreen extends Component {
-  static navigationOptions = {
-    title: 'Books'
-  };
+  static navigationOptions = booksNavOptions;
 
   render() {
     return (
