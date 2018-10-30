@@ -6,12 +6,11 @@ import Footer from './components/Footer';
 import InputTodo from './components/InputTodo';
 import TodoList from './components/TodoList';
 import styles from './styles/base'; 
+import { todoNavOptions } from './constants/navigationOptions'
 
 
 class TodoScreen extends Component { 
-  static navigationOptions = {
-    title: 'ToDo\'s List'
-  };
+  static navigationOptions = todoNavOptions
 
   render() {
     return (

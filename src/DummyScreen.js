@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 import styles from './styles/dummy';
+import { dummyNavOptions } from './constants/navigationOptions';
 
 class DummyScreen extends Component {
-  static navigationOptions = {
-    title: 'Dummy'
-  };
+  static navigationOptions = dummyNavOptions
 
   render() {
     return (
