@@ -6,6 +6,7 @@ import axios from 'axios';
 import * as actionCreators from '../actions';
 import * as statusCodes from '../reducers/constants';
 
+import bookImage from './img/descarga.jpeg';
 import styles from './styles/bookList';
 import BookItem from './BookItem';
 import { Spinner } from './common';
@@ -44,7 +45,7 @@ class BookList extends Component {
 const mapStateToProps = state => ({
   books: state.booksStore.data.map(book => {
     if (!book.thumbnail) {
-      return { ...book, thumbnail: require('./img/descarga.jpeg') };
+      return { ...book, thumbnail: bookImage };
     }
     return { ...book, thumbnail: { uri: book.thumbnail } };
   }),
