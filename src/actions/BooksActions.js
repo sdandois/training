@@ -1,18 +1,18 @@
 import {
-  REQUEST_BOOKS_START,
-  REQUEST_BOOKS_OK,
-  REQUEST_BOOKS_FAIL
+  REQUEST_BOOKS,
+  REQUEST_BOOKS_SUCCESS,
+  REQUEST_BOOKS_FAILURE
 } from './types';
 
-export const requestBooksStart = () => ({
-  type: REQUEST_BOOKS_START
+export const requestBooks = () => ({
+  type: REQUEST_BOOKS
 });
 
-export const requestBooksOk = data => ({
-  type: REQUEST_BOOKS_OK,
+export const requestBooksSuccess = data => ({
+  type: REQUEST_BOOKS_SUCCESS,
   data
 });
 
-export const requestBooksFail = () => ({
-  type: REQUEST_BOOKS_FAIL
+export const requestBooksFailure = () => ({
+  type: REQUEST_BOOKS_FAILURE
 });
