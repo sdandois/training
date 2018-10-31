@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import TodoItem from '../TodoItem/TodoItem';
 
@@ -22,5 +23,9 @@ class TodoList extends Component {
 const mapStateToProps = state => ({
   todos: state.todosStore.todos
 });
+
+TodoList.propTypes = {
+  todos: PropTypes.array
+};
 
 export default connect(mapStateToProps)(TodoList);

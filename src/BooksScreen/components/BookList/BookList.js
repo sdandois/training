@@ -18,13 +18,14 @@ class BookList extends Component {
   }
 
   keyExtractor = item => item.id.toString();
-  renderItem = ({ item }) => <BookItem book={item} />;
 
   List = () => (
     <View style={styles.view}>
       <FlatList data={this.props.books} renderItem={this.renderItem} keyExtractor={this.keyExtractor} />
     </View>
   );
+
+  renderItem = ({ item }) => <BookItem book={item} />;
 
   render() {
     if (this.props.status === statusCodes.STATUS_WAIT) {

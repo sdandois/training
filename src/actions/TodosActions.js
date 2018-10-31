@@ -1,10 +1,4 @@
-import {
-  INPUT_CHANGE,
-  ADD_TODO, 
-  TOGGLE_DONE,
-  REMOVE_TODO,
-  REMOVE_COMPLETED
-} from './types';
+import { INPUT_CHANGE, ADD_TODO, TOGGLE_DONE, REMOVE_TODO, REMOVE_COMPLETED } from './types';
 
 export const changeInput = text => ({
   type: INPUT_CHANGE,

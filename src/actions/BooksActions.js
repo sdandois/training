@@ -1,8 +1,4 @@
-import {
-  REQUEST_BOOKS,
-  REQUEST_BOOKS_SUCCESS,
-  REQUEST_BOOKS_FAILURE
-} from './types';
+import { REQUEST_BOOKS, REQUEST_BOOKS_SUCCESS, REQUEST_BOOKS_FAILURE } from './types';
 
 export const requestBooks = () => ({
   type: REQUEST_BOOKS

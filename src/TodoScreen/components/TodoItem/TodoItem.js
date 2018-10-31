@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Switch } from 'react-native';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import * as actionCreators from '../../../actions';
 import { Button } from '../../../common';
@@ -51,3 +52,11 @@ export default connect(
   null,
   mapDispatchToProps
 )(TodoItem);
+
+TodoItem.propTypes = {
+  todo: PropTypes.shape({
+    text: PropTypes.string,
+    done: PropTypes.bool,
+    id: PropTypes.number
+  })
+};
