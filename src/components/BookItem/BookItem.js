@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { withNavigation } from 'react-navigation';
 
-import * as screenNames from '../constants/screenNames';
+import * as screenNames from '../../constants/screenNames';
 
-import styles from './styles/bookItem';
+import styles from './styles';
 
 class BookItem extends Component {
   navigate = () => {

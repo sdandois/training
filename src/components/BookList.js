@@ -8,7 +8,7 @@ import * as statusCodes from '../reducers/constants';
 
 import bookImage from './img/descarga.jpeg';
 import styles from './styles/bookList';
-import BookItem from './BookItem';
+import BookItem from './BookItem/BookItem';
 import { Spinner } from './common';
 
 class BookList extends Component {
