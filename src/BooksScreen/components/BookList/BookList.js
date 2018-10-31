@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -8,6 +8,7 @@ import * as statusCodes from '../../../reducers/constants';
 import BookItem from '../BookItem/BookItem';
 import { Spinner } from '../../../common/';
 
+import ErrorComponent from './ErrorComponent';
 import bookImage from './img/descarga.jpeg';
 import styles from './styles';
 
@@ -25,12 +26,6 @@ class BookList extends Component {
     </View>
   );
 
-  ErrorComponent = () => (
-    <View style={styles.centered}>
-      <Text style={styles.label}>Connection Error </Text>
-    </View>
-  );
-
   render() {
     if (this.props.status === statusCodes.STATUS_WAIT) {
       return <Spinner />;
@@ -38,7 +33,7 @@ class BookList extends Component {
     if (this.props.status === statusCodes.STATUS_OK) {
       return <this.List />;
     }
-    return <this.ErrorComponent />;
+    return <ErrorComponent onPress={this.props.requestBooks} />;
   }
 }
 
