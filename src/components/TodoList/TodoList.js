@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 
-import TodoItem from './TodoItem';
-import styles from './styles/todoList';
+import TodoItem from '../TodoItem/TodoItem';
+
+import styles from './styles';
 
 class TodoList extends Component {
   keyExtractor = item => item.id.toString();

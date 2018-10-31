@@ -3,13 +3,13 @@ import { Text, View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import * as actionCreators from '../actions';
-import * as statusCodes from '../reducers/constants';
+import * as actionCreators from '../../actions';
+import * as statusCodes from '../../reducers/constants';
+import bookImage from '../img/descarga.jpeg';
+import BookItem from '../BookItem/BookItem';
+import { Spinner } from '../common';
 
-import bookImage from './img/descarga.jpeg';
-import styles from './styles/bookList';
-import BookItem from './BookItem/BookItem';
-import { Spinner } from './common';
+import styles from './styles';
 
 class BookList extends Component {
   componentDidMount() {

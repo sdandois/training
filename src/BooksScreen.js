@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 
-import BookList from './components/BookList';
+import BookList from './components/BookList/BookList';
 import styles from './styles/booksScreen';
 import { booksNavOptions } from './constants/navigationOptions';
 

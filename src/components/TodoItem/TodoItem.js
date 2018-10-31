@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, Switch } from 'react-native';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../actions';
+import * as actionCreators from '../../actions';
 
-import { Button } from './common/Button';
-import styles from './styles/todoItem';
+import { Button } from '../common/Button';
+import styles from './styles';
 
 class TodoItem extends Component {
   toggleDone = () => this.props.toggleDone(this.props.todo.id);
