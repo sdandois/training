@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../../actions';
+import * as actionCreators from '../../../actions';
 
 import { PLACE_HOLDER } from './constants';
 import styles from './styles';

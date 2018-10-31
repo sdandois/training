@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../../actions';
-import { Button } from '../common';
+import * as actionCreators from '../../../actions';
+import { Button } from '../../../common';
 
 import styles from './styles';
 import { BUTTON_DELETE_TEXT } from './constants';

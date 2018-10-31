@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, Switch } from 'react-native';
 import { connect } from 'react-redux';
 
-import * as actionCreators from '../../actions';
+import * as actionCreators from '../../../actions';
+import { Button } from '../../../common';
 
-import { Button } from '../common';
 import styles from './styles';
 
 class TodoItem extends Component {

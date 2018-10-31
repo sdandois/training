@@ -4,8 +4,8 @@ import { View } from 'react-native';
 import Footer from './components/Footer/Footer';
 import InputTodo from './components/InputTodo/InputTodo';
 import TodoList from './components/TodoList/TodoList';
-import styles from './styles/todoScreen';
-import { todoNavOptions } from './constants/navigationOptions';
+import styles from './styles';
+import { todoNavOptions } from './constants';
 
 class TodoScreen extends Component {
   static navigationOptions = todoNavOptions;
