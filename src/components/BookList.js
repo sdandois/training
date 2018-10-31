@@ -6,12 +6,13 @@ import axios from 'axios';
 import * as actionCreators from '../actions';
 import * as statusCodes from '../reducers/constants';
 
+import bookImage from './img/descarga.jpeg';
 import styles from './styles/bookList';
 import BookItem from './BookItem';
 import { Spinner } from './common';
 
 class BookList extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.requestBooks();
   }
 
@@ -44,7 +45,7 @@ class BookList extends Component {
 const mapStateToProps = state => ({
   books: state.booksStore.data.map(book => {
     if (!book.thumbnail) {
-      return { ...book, thumbnail: require('./img/descarga.jpeg') };
+      return { ...book, thumbnail: bookImage };
     }
     return { ...book, thumbnail: { uri: book.thumbnail } };
   }),
@@ -53,14 +54,14 @@ const mapStateToProps = state => ({
 
 const dispatchToProps = dispatch => ({
   requestBooks: () => {
-    dispatch(actionCreators.requestBooksStart());
+    dispatch(actionCreators.requestBooks());
     axios
       .get('https://private-af3ad-train5.apiary-mock.com/books0')
       .then(response => {
-        dispatch(actionCreators.requestBooksOk(response.data));
+        dispatch(actionCreators.requestBooksSuccess(response.data));
       })
       .catch(() => {
-        dispatch(actionCreators.requestBooksFail());
+        dispatch(actionCreators.requestBooksFailure());
       });
   }
 });
