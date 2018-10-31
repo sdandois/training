@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import * as actionCreators from '../../actions';
 import * as statusCodes from '../../reducers/constants';
-import bookImage from '../img/descarga.jpeg';
+import bookImage from './img/descarga.jpeg';
 import BookItem from '../BookItem/BookItem';
 import { Spinner } from '../common';
 
