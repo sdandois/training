@@ -16,18 +16,23 @@ const addTodoHelper = (todos, text, nextId) => {
   return [...todos, newTodo];
 };
 
+const valid = text => text.length > 0;
+
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case INPUT_CHANGE:
       return { ...state, inputText: action.text };
     case ADD_TODO:
-      return {
-        ...state,
-        inputText: '',
-        todos: addTodoHelper(state.todos, state.inputText, state.nextId),
-        nextId: state.nextId + 1
-      };
+      if (valid(state.inputText)) {
+        return {
+          ...state,
+          inputText: '',
+          todos: addTodoHelper(state.todos, state.inputText, state.nextId),
+          nextId: state.nextId + 1
+        };
+      }
 
+      return state;
     case TOGGLE_DONE:
       return {
         ...state,
