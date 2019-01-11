@@ -1,28 +1,14 @@
-import React, { PureComponent } from 'react';
-import { Platform, Text, View } from 'react-native';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import Footer from './components/Footer';
-import Header from './components/Header';
-import InputTodo from './components/InputTodo';
-import TodoList from './components/TodoList';
 import reducers from './reducers';
+import RootStack from './Navigation';
 
-import styles from './components/styles/base.js';
+const App = () => (
+  <Provider store={createStore(reducers)}>
+    <RootStack />
+  </Provider>
+);
 
-export default class App extends PureComponent { 
-  render() {
-    return (
-      <Provider store={createStore(reducers)} >
-        <View style={styles.container}>
-          <Header />
-          <InputTodo />
-          <TodoList />
-          <Footer />
-        </View>
-      </Provider>
-    );
-  }
-}
-
+export default App;
