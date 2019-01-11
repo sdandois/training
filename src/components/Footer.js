@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { Button } from './common/Button';
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
 
 import * as actionCreators from '../actions';
-import styles from './styles/footer.js';
-import { BUTTON_DELETE_TEXT } from './constants.js';
 
+import { Button } from './common/Button';
+import styles from './styles/footer';
+import { BUTTON_DELETE_TEXT } from './constants';
 
-class Footer extends Component {
-  render(){
-    return (
-      <View style={styles.view}>
-        <Button onPress={this.props.removeCompleted}> 
-          {BUTTON_DELETE_TEXT} 
-        </Button>
-      </View>
-    );
-  }
-}
+const Footer = props => (
+  <View style={styles.view}>
+    <Button onPress={props.removeCompleted}>{BUTTON_DELETE_TEXT}</Button>
+  </View>
+);
 
-const mapDispatchToProps = (dispatch) => ({
-  removeCompleted : () => {
+const mapDispatchToProps = dispatch => ({
+  removeCompleted: () => {
     dispatch(actionCreators.removeCompleted());
   }
 });
 
-export default connect(null , mapDispatchToProps )( Footer );
+export default connect(
+  null,
+  mapDispatchToProps
+)(Footer);

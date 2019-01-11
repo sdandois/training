@@ -2,11 +2,11 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   view: {
-    backgroundColor: '#EEE'
+    flex: 1
   },
-  input: {
-    color: '#000',
-    margin: 5,
-    fontSize: 20
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
